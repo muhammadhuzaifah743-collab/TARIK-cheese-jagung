@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="Jagung Cheese Tarik — jagung manis, cheese creamy dan cheese tarik yang padu. Order sekarang!">
+
+  <title>Jagung Cheese Tarik | Cheese Melimpah, Tarik Sampai Puas</title>
+
+  <style>
+    :root{
+      --yellow:#ffd21f;
+      --gold:#ffb300;
+      --orange:#ff7a00;
+      --red:#ed3b24;
+      --dark:#17120d;
+      --dark-2:#251b12;
+      --cream:#fff8e8;
+      --white:#fff;
+      --muted:#746b60;
+      --border:rgba(23,18,13,.08);
+      --shadow:0 18px 50px rgba(46,28,5,.12);
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--cream);
+      color:var(--dark);
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:min(1120px,92%);
+      margin:auto;
+    }
+
+    /* HEADER */
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,248,232,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .logo{
+      font-size:20px;
+      font-weight:900;
+      color:var(--dark);
+    }
+
+    .logo span{
+      color:var(--orange);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+    }
+
+    .nav-links a{
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .nav-links a:hover{
+      color:var(--orange);
+    }
+
+    .nav-order{
+      background:var(--red);
+      color:white;
+      padding:11px 18px;
+      border-radius:999px;
+      font-weight:800;
+    }
+
+    /* BUTTON */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:14px 22px;
+      border-radius:999px;
+      font-weight:900;
+      transition:.25s ease;
+      cursor:pointer;
+      border:none;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--red),var(--orange));
+      color:white;
+      box-shadow:0 12px 25px rgba(237,59,36,.25);
+    }
+
+    .btn-secondary{
+      background:white;
+      color:var(--dark);
+      border:1px solid var(--border);
+    }
+
+    /* HERO */
+    .hero{
+      padding:75px 0 65px;
+      overflow:hidden;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:55px;
+      align-items:center;
+    }
+
+    .kicker{
+      display:inline-flex;
+      background:#fff0bd;
+      color:#8b5800;
+      padding:8px 13px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-size:clamp(42px,6vw,72px);
+      line-height:1;
+      letter-spacing:-2px;
+      margin-bottom:20px;
+    }
+
+    .hero h1 span{
+      color:var(--orange);
+    }
+
+    .hero p{
+      font-size:18px;
+      color:var(--muted);
+      max-width:600px;
+      margin-bottom:24px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .trust{
+      margin-top:22px;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    /* CUP VISUAL */
+    .hero-visual{
+      min-height:430px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    .glow{
+      position:absolute;
+      width:360px;
+      height:360px;
+      background:rgba(255,210,31,.45);
+      border-radius:50%;
+      filter:blur(10px);
+    }
+
+    .cup{
+      position:relative;
+      width:230px;
+      height:280px;
+      background:linear-gradient(135deg,#fff,#fff3ce);
+      border-radius:25px 25px 55px 55px;
+      box-shadow:0 30px 60px rgba(60,35,0,.2);
+      border:5px solid white;
+      z-index:2;
+      transform:rotate(-3deg);
+    }
+
+    .cup::before{
+      content:"";
+      position:absolute;
+      width:205px;
+      height:65px;
+      left:8px;
+      top:-27px;
+      background:linear-gradient(135deg,#ffe66c,#ffbd00);
+      border-radius:50%;
+      border:5px solid white;
+    }
+
+    .cheese{
+      position:absolute;
+      width:145px;
+      height:12px;
+      background:#ffd21f;
+      border-radius:50%;
+      top:48px;
+      left:42px;
+      transform:rotate(-8deg);
+      box-shadow:
+        15px 18px 0 #ffca00,
+        -10px 33px 0 #ffd21f,
+        20px 48px 0 #ffb800;
+    }
+
+    .cup-label{
+      position:absolute;
+      left:25px;
+      right:25px;
+      bottom:70px;
+      text-align:center;
+      background:var(--red);
+      color:white;
+      padding:15px 8px;
+      border-radius:15px;
+      font-weight:900;
+      font-size:22px;
+    }
+
+    .corn{
+      position:absolute;
+      bottom:18px;
+      left:25px;
+      right:25px;
+      text-align:center;
+      font-size:42px;
+    }
+
+    /* FEATURES */
+    .features{
+      padding:25px 0 80px;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .feature{
+      background:white;
+      padding:25px;
+      border-radius:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .feature-icon{
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    .feature h3{
+      margin-bottom:6px;
+    }
+
+    .feature p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* MENU */
+    .menu-section{
+      background:var(--dark);
+      color:white;
+      padding:80px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .section-head .kicker{
+      background:#3a2b1c;
+      color:var(--yellow);
+    }
+
+    .section-head h2{
+      font-size:clamp(32px,5vw,48px);
+      line-height:1.1;
+      margin-bottom:10px;
+    }
+
+    .section-head p{
+      color:#c9bcae;
+    }
+
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .menu-card{
+      background:#21180f;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:25px;
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .menu-card.featured{
+      border:2px solid var(--yellow);
+      transform:translateY(-8px);
+    }
+
+    .popular{
+      position:absolute;
+      top:15px;
+      right:15px;
+      background:var(--yellow);
+      color:var(--dark);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:900;
+    }
+
+    .menu-icon{
+      font-size:55px;
+      margin-bottom:15px;
+    }
+
+    .menu-card h3{
+      font-size:23px;
+      margin-bottom:8px;
+    }
+
+    .menu-card p{
+      color:#c9bcae;
+      min-height:70px;
+      font-size:14px;
+    }
+
+    .price{
+      font-size:30px;
+      font-weight:900;
+      color:var(--yellow);
+      margin:15px 0;
+    }
+
+    .menu-card .btn{
+      width:100%;
+    }
+
+    /* REVIEWS */
+    .reviews{
+      padding:80px 0;
+    }
+
+    .review-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .review{
+      background:white;
+      border-radius:22px;
+      padding:25px;
+      box-shadow:var(--shadow);
+    }
+
+    .stars{
+      color:#ffb300;
+      letter-spacing:2px;
+      margin-bottom:10px;
+    }
+
+    .review p{
+      color:var(--muted);
+      margin-bottom:15px;
+    }
+
+    .review strong{
+      font-size:14px;
+    }
+
+    /* PROMO */
+    .promo{
+      padding:20px 0 80px;
+    }
+
+    .promo-box{
+      background:linear-gradient(135deg,var(--red),var(--orange));
+      color:white;
+      border-radius:30px;
+      padding:45px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+      box-shadow:0 20px 50px rgba(237,59,36,.22);
+    }
+
+    .promo-box h2{
+      font-size:38px;
+      line-height:1.1;
+      margin-bottom:10px;
+    }
+
+    .promo-box p{
+      opacity:.9;
+    }
+
+    .promo-box .btn{
+      background:white;
+      color:var(--red);
+      white-space:nowrap;
+    }
+
+    /* FAQ */
+    .faq{
+      padding:20px 0 80px;
+    }
+
+    .faq-list{
+      max-width:800px;
+      margin:auto;
+    }
+
+    details{
+      background:white;
+      margin-bottom:12px;
+      padding:18px 22px;
+      border-radius:16px;
+      box-shadow:var(--shadow);
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:900;
+    }
+
+    details p{
+      color:var(--muted);
+      margin-top:10px;
+    }
+
+    /* FINAL CTA */
+    .final-cta{
+      padding:0 0 80px;
+    }
+
+    .final-box{
+      background:var(--dark);
+      color:white;
+      border-radius:30px;
+      padding:55px 30px;
+      text-align:center;
+    }
+
+    .final-box h2{
+      font-size:42px;
+      line-height:1.1;
+      margin-bottom:12px;
+    }
+
+    .final-box p{
+      color:#c9bcae;
+      margin-bottom:25px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#100c08;
+      color:#bdb0a2;
+      padding:30px 0;
+      text-align:center;
+      font-size:13px;
+    }
+
+    footer strong{
+      color:white;
+    }
+
+    /* WHATSAPP FLOAT */
+    .wa-float{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      width:60px;
+      height:60px;
+      background:#25D366;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:29px;
+      box-shadow:0 10px 30px rgba(0,0,0,.2);
+      z-index:999;
+      transition:.25s ease;
+    }
+
+    .wa-float:hover{
+      transform:scale(1.08);
+    }
+
+    /* MOBILE */
+    @media(max-width:760px){
+
+      .nav{
+        min-height:64px;
+      }
+
+      .nav-links a:not(.nav-order){
+        display:none;
+      }
+
+      .hero{
+        padding:50px 0;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .hero h1{
+        font-size:48px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .hero-visual{
+        min-height:330px;
+      }
+
+      .feature-grid,
+      .menu-grid,
+      .review-grid{
+        grid-template-columns:1fr;
+      }
+
+      .menu-card.featured{
+        transform:none;
+      }
+
+      .promo-box{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:32px 25px;
+      }
+
+      .promo-box h2{
+        font-size:32px;
+      }
+
+      .final-box h2{
+        font-size:34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
+
+      <a href="#" class="logo">
+        🌽 Jagung <span>Cheese Tarik</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#review">Review</a>
+        <a href="#faq">FAQ</a>
+
+        <a
+          href="https://wa.me/60127402407"
+          target="_blank"
+          class="nav-order">
+          🧀 Order Sekarang
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="kicker">
+          🔥 Fresh • Creamy • Cheese Melimpah
+        </div>
+
+        <h1>
+          Cheese Tarik<br>
+          <span>Sampai Puas! 🧀</span>
+        </h1>
+
+        <p>
+          Jagung manis yang juicy, sos creamy yang padu
+          dan cheese tarik yang buat setiap suapan
+          jadi lagi sedap.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#menu" class="btn btn-primary">
+            🌽 Lihat Menu
+          </a>
+
+          <a
+            href="https://wa.me/60127402407"
+            target="_blank"
+            class="btn btn-secondary">
+            💬 Order WhatsApp
+          </a>
+
+        </div>
+
+        <div class="trust">
+          ⭐⭐⭐⭐⭐ 4.9/5 • Ramai pelanggan repeat order
+        </div>
+
+      </div>
+
+
+      <div class="hero-visual">
+
+        <div class="glow"></div>
+
+        <div class="cup">
+
+          <div class="cheese"></div>
+
+          <div class="cup-label">
+            CHEESE<br>
+            TARIK
+          </div>
+
+          <div class="corn">
+            🌽🧀🌽
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FEATURES -->
+  <section class="features">
+
+    <div class="container feature-grid">
+
+      <div class="feature">
+        <div class="feature-icon">🌽</div>
+        <h3>Jagung Manis</h3>
+        <p>
+          Jagung yang manis, juicy dan sedap
+          untuk dinikmati bila-bila masa.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🧀</div>
+        <h3>Cheese Melimpah</h3>
+        <p>
+          Sos cheese creamy yang cukup rasa
+          dan dibuat untuk peminat cheese.
+        </p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🔥</div>
+        <h3>Fresh & Panas</h3>
+        <p>
+          Disediakan fresh supaya rasa dan
+          tekstur kekal sedap.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="kicker">
+          🌽 MENU KAMI
+        </div>
+
+        <h2>Pilih Cheese Anda</h2>
+
+        <p>
+          Nak simple atau cheese melimpah?
+          Pilih ikut selera anda.
+        </p>
+
+      </div>
+
+
+      <div class="menu-grid">
+
+        <!-- CLASSIC -->
+        <div class="menu-card">
+
+          <div class="menu-icon">🌽</div>
+
+          <h3>Classic Cheese</h3>
+
+          <p>
+            Jagung manis dengan cheese creamy.
+            Simple, sedap dan puas.
+          </p>
+
+          <div class="price">
+            RM7.00
+          </div>
+
+          <a
+            href="https://wa.me/60127402407?text=Assalamualaikum%2C%20saya%20nak%20order%20Classic%20Cheese%20RM7.00"
+            target="_blank"
+            class="btn btn-primary">
+            💬 Order Sekarang
+          </a>
+
+        </div>
+
+
+        <!-- SPECIAL -->
+        <div class="menu-card featured">
+
+          <div class="popular">
+            🔥 PALING LARIS
+          </div>
+
+          <div class="menu-icon">🌽🧀</div>
+
+          <h3>Cheese Special</h3>
+
+          <p>
+            Lebih creamy, lebih cheese dan
+            lebih puas untuk peminat cheese.
+          </p>
+
+          <div class="price">
+            RM9.00
+          </div>
+
+          <a
+            href="https://wa.me/60127402407?text=Assalamualaikum%2C%20saya%20nak%20order%20Cheese%20Special%20RM9.00"
+            target="_blank"
+            class="btn btn-primary">
+            💬 Order Sekarang
+          </a>
+
+        </div>
+
+
+        <!-- PREMIUM -->
+        <div class="menu-card">
+
+          <div class="menu-icon">🌽🧀🔥</div>
+
+          <h3>Cheese Tarik Premium</h3>
+
+          <p>
+            Cheese lebih melimpah dengan
+            pengalaman cheese tarik yang padu.
+          </p>
+
+          <div class="price">
+            RM12.00
+          </div>
+
+          <a
+            href="https://wa.me/60127402407?text=Assalamualaikum%2C%20saya%20nak%20order%20Cheese%20Tarik%20Premium%20RM12.00"
+            target="_blank"
+            class="btn btn-primary">
+            💬 Order Sekarang
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="review">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="kicker">
+          ❤️ CUSTOMER REVIEW
+        </div>
+
+        <h2>Apa Kata Pelanggan?</h2>
+
+        <p>
+          Sedap sampai nak repeat lagi.
+        </p>
+
+      </div>
+
+
+      <div class="review-grid">
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+
+          <p>
+            "Cheese dia memang banyak. Jagung pun
+            manis. Memang puas hati!"
+          </p>
+
+          <strong>— Aina</strong>
+        </div>
+
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+
+          <p>
+            "Sekali cuba terus repeat.
+            Cheese tarik memang padu."
+          </p>
+
+          <strong>— Faris</strong>
+        </div>
+
+
+        <div class="review">
+          <div class="stars">★★★★★</div>
+
+          <p>
+            "Portion berbaloi dengan harga.
+            Sesuai makan waktu santai."
+          </p>
+
+          <strong>— Syafiq</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROMO -->
+  <section class="promo">
+
+    <div class="container">
+
+      <div class="promo-box">
+
+        <div>
+
+          <h2>
+            🔥 Nak Order?
+          </h2>
+
+          <p>
+            Tekan butang di sebelah dan terus
+            WhatsApp kami.
+          </p>
+
+        </div>
+
+        <a
+          href="https://wa.me/60127402407"
+          target="_blank"
+          class="btn">
+          💬 WhatsApp Sekarang
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+
+    <div class="container">
+
+      <div class="section-head">
+
+        <div class="kicker">
+          ❓ FAQ
+        </div>
+
+        <h2>Soalan Lazim</h2>
+
+      </div>
+
+
+      <div class="faq-list">
+
+        <details>
+          <summary>Macam mana nak order?</summary>
+
+          <p>
+            Tekan mana-mana butang "Order Sekarang"
+            dan anda akan terus dibawa ke WhatsApp.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Boleh pilih menu?</summary>
+
+          <p>
+            Ya. Pilih Classic Cheese, Cheese Special
+            atau Cheese Tarik Premium.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Macam mana nak tahu jumlah bayaran?</summary>
+
+          <p>
+            Harga setiap menu telah dipaparkan di laman
+            ini. Untuk jumlah keseluruhan, boleh
+            WhatsApp kami.
+          </p>
+        </details>
+
+
+        <details>
+          <summary>Boleh buat tempahan melalui WhatsApp?</summary>
+
+          <p>
+            Ya. Semua tempahan dibuat melalui WhatsApp.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+
+    <div class="container">
+
+      <div class="final-box">
+
+        <h2>
+          Dah Terliur? 🌽🧀
+        </h2>
+
+        <p>
+          Jangan tunggu lama. Terus buat tempahan
+          sekarang melalui WhatsApp.
+        </p>
+
+        <a
+          href="https://wa.me/60127402407"
+          target="_blank"
+          class="btn btn-primary">
+          💬 ORDER SEKARANG
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <p>
+        © 2026 <strong>Jagung Cheese Tarik</strong>.
+        Semua hak cipta terpelihara.
+      </p>
+
+      <p>
+        📱 WhatsApp:
+        <a
+          href="https://wa.me/60127402407"
+          target="_blank">
+          +60 12-740 2407
+        </a>
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    href="https://wa.me/60127402407"
+    target="_blank"
+    class="wa-float"
+    aria-label="Order melalui WhatsApp">
+    💬
+  </a>
+
+</body>
+</html>
